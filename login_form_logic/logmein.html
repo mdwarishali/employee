@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Wellconnect Login</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <meta
+            name="description"
+            content="Discover custom insurance solutions at RiskBirbal Insurance Brokers, covering health, motor, marine, and more. Benefit from expert risk assessment and efficient claims processing for complete security"
+        />
+        <meta
+            name="keywords"
+            content="Tailored insurance solutions for health, motor, marine, and more at RiskBirbal Insurance. Expert risk assessment and efficient claims processing for comprehensive protection"
+        />
+        <meta name="author" content="Riskbirbal-Insurance-Brokers-Private-Limited" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="icon" type="image/png" href="<?=base_url()?>external/login/images/common/dark-risk.webp" />
+        <link rel="stylesheet" href="<?=base_url()?>external/login/css/aos.css" />
+
+        <link
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+
+        <style>
+            body {
+                font-family: Axiforma, sans-serif;
+                background: url(<?=base_url()?>external/login/images/wellconnect/bg.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 100%;
+                height: 100%;
+            }
+            .main {
+                height: 660px;
+                width: 100%;
+                background-color: #ffffff59;
+                border-radius: 20px;
+                backdrop-filter: blur(15px);
+                border: 2px solid rgba(255, 255, 255, 0.1);
+                /* box-shadow: 0 0 40px rgba(255, 34, 244, 0.781); */
+                padding: 30px 20px;
+                margin-top: 33px;
+            }
+            .well-logo {
+                display: flex;
+                justify-content: center;
+            }
+            .well-login {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            input[type='radio'] {
+                accent-color: #784b8e;
+            }
+            .login-side {
+                animation: floating 3s ease-in-out infinite;
+            }
+            .forgot-pass {
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+            }
+
+            @keyframes floating {
+                0% {
+                    transform: translate(0, 0px);
+                }
+
+                50% {
+                    transform: translate(30px, 0);
+                }
+
+                100% {
+                    transform: translate(0, -0px);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row main">
+                <!-- Left Side (col-lg-6) -->
+
+                <div class="col-lg-5">
+                    <div class="card" style="padding: 25px 50px; border-radius: 20px">
+                        <div class="well-logo">
+                            <img
+                                src="<?=base_url()?>external/login/images/wellconnect/WClogo.png"
+                                alt=""
+                                style="width: 140px"
+                            />
+                        </div>
+
+                        <form style="height: 410px" id="myform" method="post">
+                            <h3
+                                class="text-center"
+                                style="position: relative; top: -17px"
+                            >
+                                Login
+                            </h3>
+                            <div class="d-flex justify-content-center">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" required type="radio" name="emp" id="hrRadio" value="hr" onclick="toggleEmployeeIdInput('hr')" />
+                                    <label
+                                        class="form-check-label"
+                                        for="hrRadio"
+                                        style="font-weight: 600"
+                                        >HR</label
+                                    >
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" required name="emp" id="employeeRadio" value="employee" onclick="toggleEmployeeIdInput('emp')" />
+                                    <label class="form-check-label" for="employeeRadio"><strong>Employee</strong></label>
+                                </div>
+                            </div>
+                            <div
+                                class="form-group"
+                                id="employeeIdLabel"
+                                style="display: none"
+                            >
+                                <label for="employeeId">Employee ID:</label>
+                            </div>
+                            <div
+                                class="form-group"
+                                id="employeeIdInput"
+                                style="display: none"
+                            >
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="employeeId"
+                                    name="emp_id"
+                                />
+                            </div>
+                            <div class="form-group">
+                                <label for="userId">User ID:</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="userId"
+                                    name="username"
+                                />
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="password">Password:</label>
+                                <input
+                                    type="password"
+                                    class="form-control"
+                                    id="password"
+                                    name="password"
+                                />
+                            </div>
+                            <div class="well-login">
+                                <button
+                                    type="submit"
+                                    class="btn btn-primary border-0"
+                                    style="background-color: #053e84"
+                                >
+                                    Login
+                                </button>
+                            </div>
+                            <div class="forgot-pass">
+                                <a href="<?=base_url('employee/forgetpass')?>" class=""  style="color: #053e84">Forgot Password?</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Right Side (col-lg-6) -->
+                <div class="col-lg-7 d-sm-none d-md-none d-lg-block">
+                    <h2
+                        class="text-center"
+                        style="color: white; position: relative; top: 50px"
+                    >
+                        Technology Easify, Care Humanify
+                    </h2>
+                    <img
+                        src="<?=base_url()?>external/login/images/wellconnect/girl-vector.png"
+                        alt="Image"
+                        class="img-fluid login-side"
+                    />
+                </div>
+            </div>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script>
+            // JavaScript function to toggle the visibility of the Employee ID label and input
+            function toggleEmployeeIdInput(arg) {
+                var employeeRadio = document.getElementById('employeeRadio');
+                var employeeIdLabel = document.getElementById('employeeIdLabel');
+                var employeeIdInput = document.getElementById('employeeIdInput');
+
+                if (employeeRadio.checked) {
+                    employeeIdLabel.style.display = 'block';
+                    employeeIdInput.style.display = 'block';
+                    
+                } else {
+                    employeeIdLabel.style.display = 'none';
+                    employeeIdInput.style.display = 'none';
+                    
+                   
+                }
+                if(arg == 'hr'){
+                     $('.forgot-pass').hide();
+                     $('#myform').attr("action","<?=base_url('client/index')?>");
+                }else{
+                     $('.forgot-pass').show();
+                     $('#myform').attr("action","<?=base_url('employee/log')?>");
+                }
+            }
+        </script>
+    </body>
+</html>
